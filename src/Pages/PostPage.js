@@ -38,7 +38,7 @@ const data = [
     {
         href : '/posts/Blockchain',
         title : 'Blockchain Development',
-        desc : 'Flutter, Androio Studio we got them all',
+        desc : 'Blockchain is a booming sector, there are ample opportunities waiting for you in the market..',
         image : 'https://online.stanford.edu/sites/default/files/inline-images/1600X900-How-does-blockchain-work.jpg'
     },
 

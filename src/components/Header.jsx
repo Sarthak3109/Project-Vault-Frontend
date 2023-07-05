@@ -105,22 +105,7 @@ export default function Header({ fixed }) {
                 }
                 </>
               }
-              {/* <li className="nav-item" >
-                <Link
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  to="/posts"
-                >
-                  <i className="fab fa-twitter text-lg leading-lg text-black opacity-75"></i><span className="ml-2">PROJECTS</span>
-                </Link>
-              </li>
-              <li className="nav-item" key = '2'>
-                <Link
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  to="/auth"
-                >
-                  <i className="fab fa-pinterest text-lg leading-lg text-black opacity-75"></i><span className="ml-2">AUTH</span>
-                </Link>
-              </li> */}
+        
             </ul>
           </div>
         </div>

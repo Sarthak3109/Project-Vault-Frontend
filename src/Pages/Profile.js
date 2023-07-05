@@ -6,22 +6,25 @@ import { useNavigate, useParams } from 'react-router-dom'
 import UserPosts from '../components/UserPosts'
 import { authActions } from '../store'
 import cover from '../bgImage.png'
+import { ToastContainer } from 'react-toastify'
 const Profile = () => {
     const navigate = useNavigate()
     const isLoggedIn = useSelector(state => state.isLoggedIn)
     const id = localStorage.getItem('user')
     const [user, setuser] = useState()
     const dispatch = useDispatch()
+    const [loading, setloading] = useState(true)
     useEffect(()=>{
         if(!isLoggedIn)return
         const getUserDetails = async()=>{
-        await getUserById(id).then(data => {setuser(data)})
+         getUserById(id).then(data => {setuser(data); setloading(false)})
         }
         getUserDetails()
     },[isLoggedIn])
     console.log(isLoggedIn)
   return (
     <div className = 'min-h-[100vh]'style={{ backgroundImage: `url(${cover})` }}>
+        <ToastContainer />
     <Header />
     {isLoggedIn && 
     

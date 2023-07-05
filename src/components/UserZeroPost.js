@@ -2,24 +2,16 @@ import React from 'react'
 
 const UserZeroPost = () => {
   return (
-    <div>
+    <div className='h-[70vh] '>
         
-    <div className="flex items-center  justify-center mt-[100px]">
-        <div >
-          <div className="flex flex-col items-center">
+    <div className="flex items-center h-[100%] justify-center ">
+       
           
 
-            <h6 className="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">
+            <h6 className="mb-2 text-2xl font-bold text-center rounded-lg bg-[black] bg-opacity-70 p-5 text-[white] md:text-3xl">
              You have not posted any projects
-             
-            </h6>
-
-            {/* <p className="mb-4 text-center text-gray-500 md:text-lg">
-              Kindly contribute a project
-            </p> */}
-
-          </div>
-        </div>
+             </h6>
+           
       </div>
     </div>
   )

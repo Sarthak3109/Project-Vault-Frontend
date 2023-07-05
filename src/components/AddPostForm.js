@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from 'react-toastify';
@@ -25,9 +25,6 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
         else if(description.length < 20)
             {toast("Describe more")
             return}
-        else if(link.length == 0)
-           { toast("Enter a link")
-            return}
         else if(date.length == 0)
             {
                 toast("Enter date")
@@ -53,11 +50,15 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
                 console.log(post)
                 toast("POST UPDATED SUCCESSFULLY")
                 updatePostById(post, _id)
+                
             }
+            navigate(`/posts/${type}`)
     }
+    const ref = useRef()
     useEffect(()=>{
        if(!isLoggedIn)
        navigate("/auth")
+      
     },[])
   return (
     <div>
@@ -87,7 +88,7 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                    placeholder = {title}
+                                    defaultValue = {title}
                                     type="text"
                                     name="name"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -105,7 +106,7 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                placeholder={description}
+                                defaultValue={description}
                                     type="text"
                                     name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -122,7 +123,7 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                placeholder = "Not Mandatory"
+                                defaultValue = "Not Mandatory"
                                     type="text"
                                     name="text"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -138,8 +139,10 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
                                Link
                             </label>
                             <div className="flex flex-col items-start">
+                            {console.log(link)}
                                 <input
-                                    placeholder = {link}
+                                    // value = "adsd"
+                                    defaultValue = {link}
                                     type="text"
                                     name="text"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -178,7 +181,7 @@ const AddPostForm = ({id, title,date,link, description, imageURL}) => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                    placeholder={date}
+                                    defaultValue={date}
                                     type="date"
                                     name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"

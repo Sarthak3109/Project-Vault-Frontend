@@ -5,7 +5,7 @@ import cover from '../bgImage.png'
 
 const AddPostPage = () => {
   return (
-    <div style={{ backgroundImage: `url(${cover})` }} className='bg-[red] h-[100vh]'>
+    <div>
    <Header/>
    <AddPostForm />
     </div>
